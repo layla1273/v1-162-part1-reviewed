@@ -12,8 +12,15 @@ packages = [
 python = ">=3.11,<3.13"
 uvicorn = "^0.23.2"
 langserve = {extras = ["server"], version = ">=0.0.30"}
-pydantic = "<2"
+pydantic = ">=2.5.2,<3.0.0"
 tqdm = "^4.67.1"
+unstructured = {extras = ["all-docs"], version = "^0.16.11"}
+langchain-experimental = "^0.3.3"
+python-dotenv = "^1.0.1"
+langchain-community = "^0.3.11"
+tiktoken = "^0.8.0"
+psycopg = "^3.2.3"
+pgvector = "^0.3.6"
 
 
 [tool.poetry.group.dev.dependencies]
