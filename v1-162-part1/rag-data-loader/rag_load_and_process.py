@@ -1,9 +1,9 @@
 import os
 
 from dotenv import load_dotenv
-from langchain_community.document_loaders import DirectoryLoader, UnstructuredPDFLoader
-from langchain_community.vectorstores.pgvector import PGVector
-from langchain_experimental.text_splitter import SemanticChunker
+from langchain_community import DirectoryLoader, UnstructuredPDFLoader
+from langchain_community import PGVector
+from langchain_experimental import SemanticChunker
 from langchain_openai import OpenAIEmbeddings
 
 load_dotenv()
