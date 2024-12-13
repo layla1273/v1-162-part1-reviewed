@@ -4,11 +4,12 @@ from langserve import add_routes
 
 app = FastAPI()
 
+# Define or import final_chain here
+final_chain = "your_chain_definition_here"
 
 @app.get("/")
 async def redirect_root_to_docs():
     return RedirectResponse("/docs")
-
 
 # Edit this to add the chain you want to add
 add_routes(app, final_chain, path="/rag")
