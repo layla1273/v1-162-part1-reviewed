@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
+from fastapi.responses.RedirectResponse
 from langserve import add_routes
 from langchain_core.runnables import Runnable  # Import the Runnable class
 
@@ -10,6 +10,10 @@ class MyRunnable(Runnable):
     def run(self, input):
         # Define the logic for your runnable here
         return "Processed: " + input
+
+    def invoke(self, input):
+        # Implement the abstract method
+        return self.run(input)
 
 final_chain = MyRunnable()
 
