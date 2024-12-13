@@ -1,11 +1,17 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes
+from langchain_core.runnables import Runnable  # Import the Runnable class
 
 app = FastAPI()
 
 # Define or import final_chain here
-final_chain = "your_chain_definition_here"
+class MyRunnable(Runnable):
+    def run(self, input):
+        # Define the logic for your runnable here
+        return "Processed: " + input
+
+final_chain = MyRunnable()
 
 @app.get("/")
 async def redirect_root_to_docs():
